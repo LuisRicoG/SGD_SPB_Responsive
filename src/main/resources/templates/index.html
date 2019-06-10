@@ -1,45 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>SGD</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-          <link rel="shortcut icon" type="image/x-icon" href="../images/icovaca.ico"  />
-
-          
+        <link rel="stylesheet" type="text/css" href="static/css/signin.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="static/images/icovaca.ico"  />
     </head>
-
-    <body>
-
-        <div class="row header center bg-transparent">
-            <h1>
-                AGROPARQUE GANADERO DEL SURESTE
-            </h1>
-        </div>
-        <br><br><br><br><br>
-        <div class="contents bg-transparent">
-            <div class="col-1-3 padding"></div>
-            <div class="col-1-3">
-                <form action="#" th:action="@{/index}" id="loginForm" method="post">
-                    <table border="1">
-                        <tr>
-                            <td><label style="color: white" th:text="USUARIO" /></td>
-                            <td><input id="username" name="username" type="text"/></td>
-                        </tr>
-                        <tr>
-                            <td><label style="color: white" th:text="CONTRASENA" /></td>
-                            <td><input id="password" name="password" type="password"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" value="LOG IN" /></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </div>
-        <div class="row footer bg-transparent">
-            <div class="circleBase type1"></div>
-        </div>
-    </body>
+<body class="text-center">
+<form class="form-signin" action="#" th:action="@{/index}" id="loginForm" method="post">
+    <label for="inputEmail" class="sr-only">USUARIO</label>
+    <input type="text" id="username" name="username" class="form-control" placeholder="USUARIO" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">CONTRASEÑA</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="CONTRASEÑA" required="">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">LOG IN</button>
+    <p class="mt-5 mb-3 text-muted">©SayHello 2019</p>
+</form>
+</body>
+    
 </html>
