@@ -7,7 +7,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
         <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="static/css/signin.css"/>
         <link rel="shortcut icon" type="image/x-icon" href="static/images/icovaca.ico"  />
     </head>
 <body class="text-center">
@@ -16,7 +15,7 @@
     </div>
     <div class="container">
         <div class="card-deck mb-3 text-center">
-            <form class="form-signin" action="#" th:action="@{/index}" id="loginForm" method="post">
+            <form class="form-group mx-auto" action="#" th:action="@{/index}" id="loginForm" method="post">
                 <label for="inputEmail" class="sr-only">USUARIO</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="USUARIO" required="" autofocus="">
                 <label for="inputPassword" class="sr-only">CONTRASEÑA</label>
@@ -24,8 +23,7 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">LOG IN</button>
                 <p class="mt-5 mb-3 text-muted">©SayHello 2019</p>
             </form>            
-        </div>
-        
+        </div>     
     </div>
 
 </body>
