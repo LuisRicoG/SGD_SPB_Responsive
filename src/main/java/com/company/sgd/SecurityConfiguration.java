@@ -58,6 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/fonts/**").permitAll()
                 .antMatchers("/images/**").permitAll()
                 .antMatchers("/js/**").permitAll()
+                .antMatchers("/static/**").permitAll()
                 .antMatchers("/menu").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/filemanager").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/cargaarchivos").hasAnyRole("USER", "ADMIN")
