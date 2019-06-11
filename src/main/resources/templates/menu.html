@@ -15,7 +15,7 @@ ing.jorge.eduardo.p@gmail.com
     </head>
     <body>
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
-            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido Jorge</h5>
+            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
             <a class="btn btn-outline-primary" href="#">Home</a>
             <form th:action="@{/logout}" method="post">
                 <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
@@ -53,8 +53,8 @@ ing.jorge.eduardo.p@gmail.com
         </div>        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script th:src="@{jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{popper/popper.min.js}"></script>
-        <script th:src="@{bootstrap/js/bootstrap.min.js}"></script>
+        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+        <script th:src="@{static/popper/popper.min.js}"></script>
+        <script th:src="@{static/bootstrap/js/bootstrap.min.js}"></script>
     </body>
 </html>
