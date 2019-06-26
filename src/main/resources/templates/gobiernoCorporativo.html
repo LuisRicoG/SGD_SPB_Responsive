@@ -4,93 +4,93 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>SGD-GOBIERNO CORPORATIVO</title>
-        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/> 
-        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{static/js/view/descargageneral.js}"></script>         
-        <script th:src="@{static/js/view/gobiernocorporativo.js}"></script>
-        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-
-    </head>
-    <body>
-        <div class="row header bg-transparent">
-            <div class="row header bg-transparent">
-                <div>
-                    <div class="col-1-2 padding align-left">
-                        <p>
-                            <h2> Bienvenido,<span th:text="${#authentication.getPrincipal().getUsername()}"></span> </h2>
-                        </p> 
-                    </div>
-                    <div class="col-1-8 padding align-right header-txt"></div>
-                    <div class="col-1-4 padding align-right header-txt">
-                        <p><a href="/SGD/menu" class="ui-buttonhome ui-botton-menu"></a>
-                        </p>
-                    </div>    
-                    <div class="col-1-8 padding align-right">
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <title>Gobierno Corporativo</title>
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+                <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+                <link rel="shortcut icon" type="image/x-icon" href="static/images/icovaca.ico"  />
+                <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+                <script th:src="@{static/js/view/descargageneral.js}"></script>
+                <script th:src="@{static/js/view/gobiernocorporativo.js}"></script>
+                </head>
+                <body>
+                    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
+                        <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
+                        <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
                         <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión" class="header-btn bg-transparent "/>
-                        </form>
+                            <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
+                        </form>            
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row header center bg-transparent">
-            <h1>GOBIERNO CORPORATIVO</h1>
-        </div>
-
-        <div class="absolute" style="left: 50px;top: 180px;">
-            <form method="POST" th:object="${vinculo}">
-                <a id="NuestroModelo" class="conocenos"><div class="bottomleft"></div></a>
-            </form>
-        </div>
-
-
-        <div class="absolute" style="left: 1250px;top: 290px;">
-            <form method="POST" th:object="${vinculo}">
-                <p><a id="EnlacesCorpo" class="btn large solid gray" style="opacity: 0.7;padding-right: 25px;padding-left: 25px;" >ENLACES CORPORATIVOS</a></p>  
-            </form>
-        </div>
-
-        <div class="organigrama" style="margin-left: 550px;margin-bottom:50px;">
-            <form method="POST" th:object="${vinculo}">
-                <center>
-
-                    <ul>
-                        <li>
-                            <p><a href="/SGD/gestor?pantalla=5" class="btn large solid gray" style="padding-left: 20px;padding-right: 20px; opacity: 0.7">ASAMBLEA DE ACCIONISTAS</a></p>
-
-                            <ul>
-                                <p><a href="/SGD/consejoadministracion" class="btn large solid gray" style="padding-left: 20px;padding-right: 20px;opacity: 0.7">CONSEJO DE ADMINISTRACION</a></p>
-                            </ul>
-
-                            <ul>
-
-                                <li><p><a href="/SGD/comiteinversiones" class="btn large solid gray" style="padding-left: 20px;padding-right: 20px;opacity: 0.7">COMITE INVERSIONES</a></p></li>
-                                <li><p><a href="/SGD/comiteengorda" class="btn large solid gray" style="padding-left: 20px;padding-right: 20px;opacity: 0.7">COMITES ENGORDA</a></p></li>
-                                <li><p><a href="/SGD/comitecomercial" class="btn large solid gray" style="padding-left: 20px;padding-right: 20px;opacity: 0.7">COMITE COMERCIAL</a></p></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </center>
-            </form>
-        </div>
-        <div class="co-1-2-4 padding">
-            <form method="POST" style="height:200px;"th:object="${vinculo}">
-
-                <table style="border: none;width:90;height:200px;margin-top: 0px;margin-bottom:0px;padding-top: 100px;padding-top: 85px;">
-                    <tr style="border: none">
-                        <td style="border: none"><a id="ProtocoloAccionistas" class="ui-button-gobierno-mod protocolo-Acc"><div class="bottomleft">PROTOCOLO DE ACCIONISTAS</div></a></td>
-                        <td style="border: none"><a class="ui-button-gobierno-mod reglasOper"><div class="bottomleft">REGLAS DE OPERACION</div></a></td>
-                        <td style="border: none"><a id="CodigoEtica" class="ui-button-gobierno-mod codigoetica"><div class="bottomleft">CODIGO DE ETICA <br> </br></div></a></td>
-                        <td style="border: none"><a href="/SGD/plantrabajo" class="ui-button-gobierno-mod PlanTrabAnual"><div class="bottomleft">PLAN DE TRABAJO ANUAL</div></a></td>
-                        <td style="border: none"><a href="/SGD/informeactividades" class="ui-button-gobierno-mod informaAct"><div class="bottomleft">INFORME DE ACTIVIDADES</div></a></td>
-                    </tr> 
-                </table>
-            </form>
-        </div>          
-    </body>
-</html>
+                    <div class="text-center">
+                        <h1>GOBIERNO CORPORATIVO</h1>
+                    </div>
+                    <div class="row text-center Padding-top-botton">
+                        <div class="offset-md-1 col-md-2">
+                            <img src="static/images/conoce.png" class="img-responsive" width="100%" height="auto"/>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="offset-md-4 col-md-3">
+                                    <a href="/SGD/gestor?pantalla=5" class="btn btn-lg btn-block btn-light menubutton"><h4>Asamblea de Accionistas</h4></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="offset-md-4 col-md-3 Padding-sagarpa">
+                                    <a href="/SGD/consejoadministracion" class="btn btn-lg btn-block btn-light menubutton"><h4>Consejo de Administracion</h4></a>
+                                </div>
+                                <div class="offset-md-1 col-md-3 Padding-sagarpa">
+                                    <a id="EnlacesCorpo" class="btn btn-lg btn-block btn-light menubutton"><h4>Enlaces Corporativos</h4></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 Padding-sagarpa">
+                                    <a href="/SGD/comiteinversiones" class="btn btn-lg btn-block btn-light menubutton"><h4>Comite Inversiones</h4></a>
+                                </div>
+                                <div class="offset-md-1 col-md-3 Padding-sagarpa">
+                                    <a href="/SGD/comiteinversiones" class="btn btn-lg btn-block btn-light menubutton"><h4>Comites Engordas</h4></a>
+                                </div>
+                                <div class="offset-md-1 col-md-3 Padding-sagarpa">
+                                    <a href="/SGD/comitecomercial" class="btn btn-lg btn-block btn-light menubutton"><h4>Comite Comercial</h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>     
+                    <div class="row text-center Padding-sagarpa">
+                        <div class=" offset-md-1 col-md-2 Padding-sagarpa">
+                            <div class="btn-group-vertical">                            	
+                                <img src="static/images/protocoloAccio.jpg" class="img-thumbnail"/>
+                                <a id="ProtocoloAccionistas" class="btn btn-lg btn-block btn-light menubutton"><h4>Protocolo de Accionistas</h4></a>
+                            </div>               
+                        </div>
+                        <div class="col-md-2 Padding-sagarpa">
+                            <div class="btn-group-vertical">                            	
+                                <img src="static/images/reglasOper.jpg" class="img-thumbnail"/>
+                                <a id="#" class="btn btn-lg btn-block btn-light menubutton"><h4>Reglas de Operacion</h4></a>
+                            </div>               
+                        </div>  
+                        <div class="col-md-2 Padding-sagarpa">
+                            <div class="btn-group-vertical">                            	
+                                <img src="static/images/reglasOper.jpg" class="img-thumbnail"/>
+                                <a id="CodigoEtica" class="btn btn-lg btn-block btn-light menubutton"><h4>Codigo de Etica</h4></a>
+                            </div>               
+                        </div>  
+                        <div class="col-md-2 Padding-sagarpa">
+                            <div class="btn-group-vertical">                            	
+                                <img src="static/images/PlanTrabAnual.jpg" class="img-thumbnail"/>
+                                <a href="/SGD/plantrabajo" class="btn btn-lg btn-block btn-light menubutton"><h4>Plan de Trabajo Anual</h4></a>
+                            </div>               
+                        </div>  
+                        <div class="col-md-2 Padding-sagarpa">
+                            <div class="btn-group-vertical">                            	
+                                <img src="static/images/informaAct.jpg" class="img-thumbnail"/>
+                                <a href="/SGD/informeactividades" class="btn btn-lg btn-block btn-light menubutton"><h4>Informe de Actividades</h4></a>
+                            </div>               
+                        </div>  
+                    </div>
+                </body>
+                </html>

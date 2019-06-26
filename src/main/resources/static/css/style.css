@@ -1542,3 +1542,22 @@ table.facturas thead th:first-child {
     font-size:18px;
     text-align: justify;
 }
+
+.Padding-top-botton{
+    padding-bottom: 4em;
+    padding-top: 4em;
+    color: white;
+}
+.Padding-sagarpa{
+    padding-bottom: 1em;
+    padding-top: 1em;
+    color: white;
+
+}
+
+img-sagarpa {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
