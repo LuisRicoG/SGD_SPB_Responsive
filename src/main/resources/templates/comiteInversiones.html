@@ -4,125 +4,117 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">    
-
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>SGD-COMITE INVERSIONES</title>     
-        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{static/js/view/descargageneral.js}"></script>        
-        <script th:src="@{static/js/view/comiteinversiones.js}"></script>
-        <script  src="js/index.js"></script>
-        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-            <script>
-                function goBack() {
-                    window.history.back();
-                }
-            </script>
-            
-    
-            
-       
-    </head>
-
-    <body>
-        <div class="row header bg-transparent">
-            <div>
-                <div class="col-1-2 padding align-left">
-                    <p>
-                        <h2> Bienvenido,<span th:text="${#authentication.getPrincipal().getUsername()}"></span> </h2>
-                    </p> 
-                </div>
-                <div class="col-1-8 padding align-right header-txt"></div>
-                <div class="col-1-4 padding align-right header-txt">
-                    <p><a href="/SGD/menu" class="ui-buttonhome ui-botton-menu"></a>
-                        <a onclick="goBack()" class="ui-buttonhome ui-botton-regreso"></a>
-                    </p>
-                </div>    
-                <div class="col-1-8 padding align-right">
-                    <form th:action="@{/logout}" method="post">
-                        <input type="submit" value="Cerrar sesión" class="header-btn bg-transparent "/>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <br></br>
-        <center> <h1>COMITE INVERSIONES</h1></center>
-        <table style="width:100%; border: none">     
-            <tr style="border: none">
-                <td class="tablaconf" align="left" style="border: none; width: 35%">
-             
-                    <div class="titulo_boton"> MIEMBROS DEL COMITE
-  <a style='cursor: pointer;padding-top: 2.5;padding-top: 3px;' onClick="muestra_oculta('contenido')" title="" class="boton_mostrar">MOSTRAR / OCULTAR</a>
-</div>
-                    
-                    <div id="contenido" style="display: block; width: 714px; height: 684px; padding-bottom: 0px; padding-top: 10px;">
-                    <table style=" border: none">  
-                        <tr style="border:0.1px">
-                            <td>JORGE HERNANDEZ P.<BR>PRESIDENTE</td>
-                               <td>SOCIO CONSEJERO</td>
-                        </tr>
-                          <tr style="border:0.1px">
-                            <td>JOSE VAZQUEZ C.<BR>VICEPRESIDENTE</td>
-                               <td>SOCIO CONSEJERO</td>
-                        </tr>
-                          <tr style="border:0.1px">
-                            <td>GERARDO PRIEGO A.<BR>MIEMBRO</td>
-                               <td>SOCIO CONSEJERO</td>
-                        </tr>
-                          <tr style="border:0.1px">
-                            <td>ANTONIO GUTIERREZ R.<BR>MIEMBRO</td>
-                               <td>SOCIO CONSEJERO</td>
-                        </tr>
-                          <tr style="border:0.1px">
-                            <td>KARLA CHABLE H.<BR>MIEMBRO</td>
-                               <td>SOCIO CONSEJERO</td>
-                        </tr>
-                         <tr style="border:0.1px">
-                            <td>RUBEN VAZQUEZ M.<BR>MIEMBRO</td>
-                               <td>SOCIO</td>
-                        </tr>
-                        
-                         <tr style="border:0.1px">
-                            <td>GISELA PEREZ P.<BR>SECRETARIO</td>
-                              <td>EN REPRESENTACION DE SOCIO</td>
-                        </tr>
-<!--                        
-                        
-                        
-                        
-                        <tr style="border: none" th:each="nombres : ${listanombres}">                            
-                            <td style="border: none" th:text="${nombres.nombre}"></td>
-                            <td style="border: none" th:text="${nombres.cargo}"></td>
-                        </tr>-->
-                    </table>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <title>Comite Inversiones</title>
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+                <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+                <link rel="shortcut icon" type="image/x-icon" href="static/images/icovaca.ico"  />
+                <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+                <script th:src="@{static/js/view/descargageneral.js}"></script>
+                <script th:src="@{static/js/view/comiteinversiones.js}"></script>
+                </head>
+                <body>
+                    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
+                        <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
+                        <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
+                        <form th:action="@{/logout}" method="post">
+                            <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
+                        </form>            
                     </div>
+                    <div class="text-center">
+                        <h1>COMITE INVERSIONES</h1>
+                    </div>
+                    <div class="row text-center Padding-top-botton">
+                        <div class="col-md-5">
+                            <table class="table table-hover table-dark">  
+                                <thead>
+                                    <tr>
+                                        <th>MIEMBROS DEL COMITE</th>
+                                        <th>PUESTO</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>JORGE HERNANDEZ P.</td>
+                                        <td>PRESIDENTE</td>
+                                        <td>SOCIO CONSEJERO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JOSE VAZQUEZ C.</td>
+                                        <td>VICEPRESIDENTE</td>
+                                        <td>SOCIO CONSEJERO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GERARDO PRIEGO A.</td>
+                                        <td>MIEMBRO</td>
+                                        <td>SOCIO CONSEJERO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ANTONIO GUTIERREZ R.</td>
+                                        <td>MIEMBRO</td>
+                                        <td>SOCIO CONSEJERO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KARLA CHABLE H.</td>
+                                        <td>MIEMBRO</td>
+                                        <td>SOCIO CONSEJERO</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RUBEN VAZQUEZ M.</td>
+                                        <td>MIEMBRO</td>
+                                        <td>SOCIO</td>
+                                    </tr>
 
-                    
-                    
-                    
-                    
-                </td>
-                <td align="center" style="border: none; padding-top: 0px; padding-left: 15%">
-                    <div class="row">
-                        <div class="col-1-2-res padding" style="align-content: center;padding-top: 40px;margin-left: 350px;">
-                            <div class="border rounded">
-                                <p><a href="/SGD/gestor?pantalla=9" class="btn large solid gray menubutton">SESIONES</a></p>                                           
-                            </div>
-                            <br>
-                                <div class="border rounded">
-                                    <p><a id="ReglasOpInversiones" class="btn large solid gray menubutton">REGLAS DE OPERACION</a></p>
-                                    <p><a id="CurriMiemborsInversiones" class="btn large solid gray menubutton">CURRICULUM MIEMBROS</a></p>
-                                    <p><a id="CartasConfiInversiones" class="btn large solid gray menubutton">CARTAS CONFIDENCIALIDAD</a></p>
-                                    <p><a id="PlanAnualSesInversiones" class="btn large solid gray menubutton">PLAN ANUAL DE SESIONES</a></p>      
-                                    <p><a id="ReportesTriInversiones" class="btn large solid gray menubutton">REPORTES TRIMESTRALES</a></p>           
-                                </div>
+                                    <tr>
+                                        <td>GISELA PEREZ P.</td>
+                                        <td>SECRETARIO</td>
+                                        <td>EN REPRESENTACION DE SOCIO</td>
+                                    </tr>
+                                    <!--<tr th:each="nombres : ${listanombres}">                            
+                                                                <td style="border: none" th:text="${nombres.nombre}"></td>
+                                                                <td style="border: none" th:text="${nombres.cargo}"></td>
+                                                            </tr>-->
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                </td>
-
-            </tr>
-        </table>                                  
-    </body>
-</html>
+                        <div class="col-md-7">
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a href="/SGD/gestor?pantalla=9" class="btn btn-lg btn-block btn-info"><h4>Sesiones</h4></a>
+                                </div>                                    
+                            </div>
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a id="ReglasOpInversiones" class="btn btn-lg btn-block btn-info"><h4>Reglas de Operacion</h4></a>
+                                </div>                                    
+                            </div>
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a id="CurriMiemborsInversiones" class="btn btn-lg btn-block btn-info"><h4>Curriculum Miembros</h4></a>
+                                </div>                                    
+                            </div>
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a id="CartasConfiInversiones" class="btn btn-lg btn-block btn-info"><h4>Cartas Confidencialidad</h4></a>
+                                </div>                                    
+                            </div>
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a id="PlanAnualSesInversiones" class="btn btn-lg btn-block btn-info"><h4>Plan Anual de Sesiones</h4></a>
+                                </div>                                    
+                            </div>
+                            <div class="row text-center Padding-sagarpa">
+                                <div class="offset-md-3 col-md-7">
+                                    <a id="ReportesTriInversiones" class="btn btn-lg btn-block btn-info"><h4>Reportes Trimestrales</h4></a>
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>                                                    
+                </body>
+                </html>
