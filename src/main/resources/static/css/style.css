@@ -811,7 +811,7 @@ table.facturas thead th:first-child {
     border: none;
     font: normal bold  20px/normal Aria, Helvetica, sans-serif;
     color: white;
-    text-align: center;
+    text-align: center;    
     -o-text-overflow: clip;
     text-overflow: clip;
 }

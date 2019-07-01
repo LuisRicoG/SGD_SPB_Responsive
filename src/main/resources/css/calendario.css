@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/05/2019, 05:26:49 PM
+    Author     : the_d
+*/
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 10px;
+    background-color: rgba(211,211,211,0.5);
+  }
+  
+  #calendar .fc-day-number{
+    color: black;
+  }
+  
+  #calendar .fc-week-number{
+    color: black;
+  }
+  
+  #calendar .fc-more{
+    color: black;
+  }
+  
+  #calendar .fc-day-header{
+    color: black;
+  }  
+
+  #calendar .fc-event{
+    background-color: green;  
+  }
