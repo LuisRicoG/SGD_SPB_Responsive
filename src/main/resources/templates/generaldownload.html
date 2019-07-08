@@ -5,13 +5,14 @@ ing_farias@live.com
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>SGD</title>
-                <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>  
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/> 
-        <!-- jquery
-                    ============================================  -->
-        <script src="js/jquery/jquery-3.4.1.min.js"></script>   
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
 
         <!-- jQuery UI
                     ============================================ -->    
@@ -52,14 +53,12 @@ function goBack() {
             </form>            
         </div>   
         <div></div>
-        <div class="row header center bg-transparent">
+        <div class="mx-auto bg-transparent">
             <h1><span th:text="${titulo}"></span></h1>
         </div>
-        <p class="col-2-4"></p>
-        <div class="co-1-2-4 padding"></div>
-        <div class="co-1-2-4 padding">
-            <div id="jsGrid" class="jsgrid" style="position: relative; height: 70%; width: 100%;"></div>
-        </div>
+        <div class="row mb-3">
+            <div id="jsGrid" class="jsgrid col-12 col-sm-12 themed-grid-col" style="width: 90%"></div>
+        </div>        
         <div class="row footer bg-transparent"></div>
     </body>
 </html>
