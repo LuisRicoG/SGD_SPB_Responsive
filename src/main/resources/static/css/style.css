@@ -588,6 +588,13 @@ h2{
     color: white;
     background: transparent;         
 }
+
+.disenobase{
+    background-color: gray;
+    opacity: 0.75;
+    font-weight: bold;
+    color: white;     
+}
 .ui-button-contratos{
     display: inline-block;
     -webkit-box-sizing: content-box;
