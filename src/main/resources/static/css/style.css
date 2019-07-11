@@ -1555,9 +1555,7 @@ table.facturas thead th:first-child {
 
 }
 
-img-sagarpa {
-    display: block;
-    max-width: 100%;
-    height: auto;
+.paddind-sa{
+    padding-right: 1em;
 }
 
