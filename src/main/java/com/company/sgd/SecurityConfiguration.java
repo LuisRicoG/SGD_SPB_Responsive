@@ -102,6 +102,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST,"/getEstado").hasAnyRole("USER", "ADMIN")
                
             //ERRORES-----------------------------------------------------------------------------    
+                .antMatchers("/307").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/403").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/404").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/500").hasAnyRole("USER", "ADMIN")
@@ -186,7 +187,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .formLogin()
-                .permitAll().and().sessionManagement().maximumSessions(1).expiredUrl("/login?expired");
+                .permitAll().and().sessionManagement().maximumSessions(1).expiredUrl("/307").maxSessionsPreventsLogin(true);;
 
         http
                 .headers()
