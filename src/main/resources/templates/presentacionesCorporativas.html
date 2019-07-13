@@ -17,13 +17,7 @@ and open the template in the editor.
          <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
     </head>
     <body>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
-                            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
-                            <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
-                            <form th:action="@{/logout}" method="post">
-                                <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
-                            </form>            
-                        </div>
+   <div th:replace="encabezado :: div">...</div>
         <div class="notice" data-sel-notice="" id="notice" hidden="true">
             <div class="inner">
                 <p id="flash_message" data-sel-notice-message="">

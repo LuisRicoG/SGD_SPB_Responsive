@@ -3,92 +3,80 @@
     <head>        
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{static/js/view/descargageneral.js}"></script>
-        <script th:src="@{static/js/view/proyectoejecutivo.js}"></script>
-        <title>SGD</title>        
-        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-            <script>
-                function goBack() {
-                    window.history.back();
-                }
-            </script>            
-    </head>
-    <body>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent bg-transparent">
-            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
-            <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
-            <a onclick="goBack()" class="ui-buttonhome ui-botton-regreso"></a>
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
-            </form>            
-        </div>   
-        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-            <h1 class="display-4">PROYECTO EJECUTIVO</h1>
-        </div>        
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal" style="color:white">TERRENO</h4>
-                    </div>
-                    <div class="card-body">
-                        <p><a id="estructuraterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTRUCTURA DEL<br>TERRENO</a></p>
-                        <p><a id="avaluoterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">AVALUO<br>TERRENO</a></p>
-                    </div>
-                </div>
-                    </div>
-                <div class="col-md-3">
-                <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal" style="color:white">PROYECTO</h4>
-                    </div>
-                    <div class="card-body">
-                        <p><a id="proyectoentregado" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PROYECTO ENTREGADO<br>TIF2000</a></p>
-                        <p><a id="programanecesidades" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PROGRAMA DE<br>NECESIDADES</a></p>
-                        <p><a id="programaparticularnecesidades" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PROGRAMA PARTICULAR<br>NECESIDADES</a></p>  
-                        <p><a id="justificacionproyecto" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">JUSTIFICACION DEL<br> PROYECTO</a></p>  
-                    </div>
-                </div>
-                            </div>
-                <div class="col-md-3">
-                <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal" style="color:white">ESTUDIOS</h4>
-                    </div>
-                    <div class="card-body">
-                        <p><a id="impactosuelos" class="btn btn-lg btn-block btn-light menubutton" style=" background: black; opacity:0.6; color:white;">IMPACTO MECANICA DE SUELOS</a></p>
-                        <p><a id="impactoambiental" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">ESTUDIO DE IMPACTO<br>AMBIENTAL</a></p>
-                        <p><a id="impactovial" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTUDIO DE<br>IMPACTO VIAL</a></p> 
-                         <p><a id="energiaelectrica" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">FACTIBILIDAD ENERGIA ELECTRICA</a></p> 
-                          <p><a id="estudiohidrologico" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTUDIO<br>HIDROLOGICO</a></p> 
-                           <p><a id="usodesuelo" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">FACTIBILIDAD USO<br>DE SUELO</a></p> 
-                            <p><a id="aguasnacionales" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">CONCESION DE<br>AGUAS NACIONALES</a></p> 
-                    </div>
-                </div>
-                    </div>
-                <div class="col-md-3">
-                
-                <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal" style="color:white">PLANOS</h4>
-                    </div>
-                    <div class="card-body">
-                        <p><a id="planoregional" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PLANO DE LOCALIZACION<br>TERRENO REG.</a></p>
-                        <p><a id="planorural" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PLANO DE<br>LOCALIZACION<br>TERRENO RURAL</a></p>
-                        <p><a id="planotopografico" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PLAN<br>TOPOGRAFICO</a></p> 
-                          <p><a id="ubicacionterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">JUSTIFICACION UBICACION<br>TERRENO</a></p> 
-                            <p><a id="planosinfraestructura" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PLANOS<br>INFRAESTRUCTURA</a></p> 
-                    </div>
-                </div>
-                    </div>
-            </div>     
-            </div>
-    </body>
-</html>
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+                <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+                <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+                <script th:src="@{static/js/view/descargageneral.js}"></script>
+                <script th:src="@{static/js/view/proyectoejecutivo.js}"></script>
+                <title>SGD</title>        
+                <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">         
+                    </head>
+                    <body>
+                        <div th:replace="encabezado :: div">...</div>  
+                        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                            <h1 class="display-4">PROYECTO EJECUTIVO</h1>
+                        </div>        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-normal" style="color:white">TERRENO</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><a id="estructuraterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTRUCTURA DEL<br>TERRENO</a></p>
+                                            <p><a id="avaluoterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">AVALUO<br>TERRENO</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-normal" style="color:white">PROYECTO</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><a id="proyectoentregado" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PROYECTO ENTREGADO<br>TIF2000</a></p>
+                                            <p><a id="programanecesidades" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PROGRAMA DE<br>NECESIDADES</a></p>
+                                            <p><a id="programaparticularnecesidades" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PROGRAMA PARTICULAR<br>NECESIDADES</a></p>  
+                                            <p><a id="justificacionproyecto" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">JUSTIFICACION DEL<br> PROYECTO</a></p>  
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-normal" style="color:white">ESTUDIOS</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><a id="impactosuelos" class="btn btn-lg btn-block btn-light menubutton" style=" background: black; opacity:0.6; color:white;">IMPACTO MECANICA DE SUELOS</a></p>
+                                            <p><a id="impactoambiental" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">ESTUDIO DE IMPACTO<br>AMBIENTAL</a></p>
+                                            <p><a id="impactovial" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTUDIO DE<br>IMPACTO VIAL</a></p> 
+                                            <p><a id="energiaelectrica" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">FACTIBILIDAD ENERGIA ELECTRICA</a></p> 
+                                            <p><a id="estudiohidrologico" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">ESTUDIO<br>HIDROLOGICO</a></p> 
+                                            <p><a id="usodesuelo" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">FACTIBILIDAD USO<br>DE SUELO</a></p> 
+                                            <p><a id="aguasnacionales" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">CONCESION DE<br>AGUAS NACIONALES</a></p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+
+                                    <div class="card shadow-sm bg-transparent" style="border-color: white; text-align: center;">
+                                        <div class="card-header">
+                                            <h4 class="my-0 font-weight-normal" style="color:white">PLANOS</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p><a id="planoregional" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PLANO DE LOCALIZACION<br>TERRENO REG.</a></p>
+                                            <p><a id="planorural" class="btn btn-lg btn-block btn-light menubutton" style=" height: 107.97916599999999px; background: black; opacity:0.6; color:white;">PLANO DE<br>LOCALIZACION<br>TERRENO RURAL</a></p>
+                                                            <p><a id="planotopografico" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PLAN<br>TOPOGRAFICO</a></p> 
+                                                            <p><a id="ubicacionterreno" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">JUSTIFICACION UBICACION<br>TERRENO</a></p> 
+                                                            <p><a id="planosinfraestructura" class="btn btn-lg btn-block btn-light menubutton" style="background: black; opacity:0.6; color:white;">PLANOS<br>INFRAESTRUCTURA</a></p> 
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </div>     
+                                                            </div>
+                                                            </body>
+                                                            </html>
