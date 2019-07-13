@@ -3,7 +3,7 @@ package com.company.sgd.controller;
 import com.company.sgd.service.OrganigramaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -20,7 +20,7 @@ public class OrganigramaController {
         this.service = organigramaService;
     }
 
-    @GetMapping("/downorganigrama")
+    @PostMapping("/downorganigrama")
     @ResponseBody
     public void org() {
         service.organigrama();
