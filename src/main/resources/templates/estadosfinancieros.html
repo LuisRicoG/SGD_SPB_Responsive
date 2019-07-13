@@ -12,26 +12,22 @@
         <script th:src="@{static/js/view/descargageneral.js}"></script>
         <script th:src="@{static/js/view/estadosfinancieros.js}"></script>
         <title>SGD</title>        
-        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-            <script>
-                function goBack() {
-                    window.history.back();
-                }
-            </script>            
+        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">        
     </head>
     <body>
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent bg-transparent">
-            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
-            <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
-            <a onclick="goBack()" class="ui-buttonhome ui-botton-regreso"></a>
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
-            </form>            
-        </div>   
+        <div th:replace="encabezado :: div">...</div> 
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 ">AGROPARQUE GANADERO DEL SURESTE</h1>
             <h1 class="display-4">ESTADOS FINANCIEROS</h1>
-        </div>        
+        </div>  
+        <div class="row text-center">
+             <div class="offset-sm-2 col-sm-8 offset-md-5 col-md-2 Padding-top-botton">
+                 <select id="year" style="width: 100%">
+                     <option th:each="valor : ${lista}" th:value="${valor.descripcion}" th:text="${valor.descripcion}">
+                     </option>
+                 </select>
+                 <br> <br>
+             </div>   
+         </div>         
         <div class="container">
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 shadow-sm bg-transparent" style="border-color: white">
@@ -76,7 +72,7 @@
                 </div>
             </div>
         </div>       
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <footer class="pt-4 my-md-5 pt-md-5">
             <div class="row">
                 <div class="col-6 col-md">
                     <div class="circleBase type1"></div>

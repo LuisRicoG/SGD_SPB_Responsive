@@ -5,25 +5,27 @@ ing_farias@live.com
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>SGD-ESCRITURAS</title>
-        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/> 
-        <!-- jquery
-                    ============================================  -->
-        <script src="js/jquery/jquery-3.4.1.min.js"></script>   
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
 
         <!-- jQuery UI
                     ============================================ -->    
-        <link type="text/css" rel="stylesheet" href="js/jqueryui/jquery-ui.min.css" />    
-        <script type="text/javascript" src="js/jqueryui/jquery-ui.min.js"></script>   
+        <link type="text/css" rel="stylesheet" href="static/jqueryui/jquery-ui.min.css" />    
+        <script type="text/javascript" src="static/jqueryui/jquery-ui.min.js"></script>   
 
         <!-- jsGrid
                     ============================================ -->    
-        <link type="text/css" rel="stylesheet" href="js/jsgrid/jsgrid.min.css" />
-        <link type="text/css" rel="stylesheet" href="js/jsgrid/jsgrid-theme.min.css" />
+        <link type="text/css" rel="stylesheet" href="static/jsgrid/jsgrid.min.css" />
+        <link type="text/css" rel="stylesheet" href="static/jsgrid/jsgrid-theme.min.css" />
 
-        <script type="text/javascript" src="js/jsgrid/jsgrid.min.js"></script>   
-        <script type="text/javascript" src="js/jqueryui/datepicker-es.js"></script>   
+        <script type="text/javascript" src="static/jsgrid/jsgrid.min.js"></script>   
+        <script type="text/javascript" src="static/jqueryui/datepicker-es.js"></script>   
 
         <!-- view JS
                     ============================================ -->
@@ -36,41 +38,22 @@ function goBack() {
   window.history.back();
 }
 </script>
-        <script src="js/view/descargageneral.js"></script>          
-        <script src="js/view/gridlist.js"></script>        
+        <script src="static/js/view/descargageneral.js"></script>          
+        <script src="static/js/view/gridlist.js"></script>        
         <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
     </head>
 
     <body>
-            <div class="row header bg-transparent">
-                <div>
-                    <div class="col-1-2 padding align-left">
-                        <p>
-                            <h2> Bienvenido,<span th:text="${#authentication.getPrincipal().getUsername()}"></span> </h2>
-                        </p> 
-                    </div>
-                    <div class="col-1-8 padding align-right header-txt"></div>
-                    <div class="col-1-4 padding align-right header-txt">
-                        <p><a href="/SGD/menu" class="ui-buttonhome ui-botton-menu"></a>
-                            <a onclick="goBack()" class="ui-buttonhome ui-botton-regreso"></a>
-                        </p>
-                    </div>    
-                    <div class="col-1-8 padding align-right">
-                        <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión" class="header-btn bg-transparent "/>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div th:replace="encabezadoreturn :: div">...</div>  
         <div></div>
-        <div class="row header center bg-transparent">
-            <h1><span th:text="${titulo}"></span></h1>
+        <div class="container-fluid">       
+            <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                       <h1 class="display-4"><span th:text="${titulo}"></span></h1>
+                        </div>
+            <div class="row mb-3">
+                <div id="jsGrid" class="jsgrid col-12 col-sm-12 themed-grid-col" style="width: 90%"></div>
+            </div>        
+            <div class="row footer bg-transparent"></div>
         </div>
-        <p class="col-2-4"></p>
-        <div class="co-1-2-4 padding"></div>
-        <div class="co-1-2-4 padding">
-            <div id="jsGrid" class="jsgrid" style="position: relative; height: 70%; width: 100%;"></div>
-        </div>
-        <div class="row footer bg-transparent"></div>
     </body>
 </html>
