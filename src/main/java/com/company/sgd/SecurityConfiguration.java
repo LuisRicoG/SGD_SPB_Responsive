@@ -187,7 +187,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .formLogin()
-                .permitAll().and().sessionManagement().maximumSessions(1).expiredUrl("/307").maxSessionsPreventsLogin(true);
+                .permitAll().and().sessionManagement().maximumSessions(1).expiredUrl("/307");
 
         http
                 .headers()
