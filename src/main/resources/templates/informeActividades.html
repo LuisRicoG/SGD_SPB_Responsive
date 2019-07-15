@@ -1,110 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>SGD</title>     
-        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="css/notice.css"/>
-        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{static/js/view/descargageneral.js}"></script>        
-        <script th:src="@{static/js/view/informeactividades.js}"></script>
-        <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-            
-                   <script>
-function goBack() {
-  window.history.back();
-}
-</script>
-    </head>
+    <head>        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <body>            <div class="row header bg-transparent">
-                <div>
-                    <div class="col-1-2 padding align-left">
-                        <p>
-                            <h2> Bienvenido,<span th:text="${#authentication.getPrincipal().getUsername()}"></span> </h2>
-                        </p> 
-                    </div>
-                    <div class="col-1-8 padding align-right header-txt"></div>
-                    <div class="col-1-4 padding align-right header-txt">
-                        <p><a href="/SGD/menu" class="ui-buttonhome ui-botton-menu"></a>
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+                <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+                <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+                <script th:src="@{static/js/view/descargageneral.js}"></script>
+                <script th:src="@{static/js/view/informeactividades.js}"></script>
+                <title>Informe de Actividades</title>        
+                <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
+                    <script>
+                        function goBack() {
+                            window.history.back();
+                        }
+                    </script>            
+                    </head>
+                    <body>
+                        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent bg-transparent">
+                            <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
+                            <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
                             <a onclick="goBack()" class="ui-buttonhome ui-botton-regreso"></a>
-                        </p>
-                    </div>    
-                    <div class="col-1-8 padding align-right">
-                        <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión" class="header-btn bg-transparent "/>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        <div></div>
-        <div class="notice" data-sel-notice="" id="notice" hidden="true">
-            <div class="inner">
-                <p id="flash_message" data-sel-notice-message="">
-                </p><p>El archivo no se encuentra disponible. Por favor contacte al Administrador.</p>
-                <span class="close-flash-message" onclick="document.getElementById('notice').style.display = 'none'; return false;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" title="Dismiss">
-                        <path d="M44.4 7.7l-2.1-2.1L25 22.9 7.7 5.6 5.6 7.7 22.9 25 5.6 42.3l2.1 2.1L25 27.1l17.3 17.3 2.1-2.1L27.1 25z"></path>
-                    </svg>
-                </span>
-                <p></p>
-            </div>
-        </div>
-        <div class="row header center bg-transparent">
-            <h1>
-                INFORME DE ACTIVIDADES
-            </h1>
-        </div>
-        <div class="contents bg-transparent padding">
-            <div class="row">
-                <div class="col-1-3 padding"></div>
-                <div class="col-1-3 padding">
-                    <select id="year" style="width: 100%">
-                        <option th:each="valor : ${lista}" th:value="${valor.descripcion}" th:text="${valor.descripcion}">
-                        </option>
-                    </select>                    
-                </div>
-                <div class="col-1-3 padding"></div>                  
-            </div>
-            <div class="row padding">
-                <div class="col-1-4 padding">
-                    <div class="border rounded">
-                        <h1 class="center">Q1</h1>
-                        <p><a id="ENERO" class="btn large solid gray menubutton">ENERO</a></p>
-                        <p><a id="FEBRERO" class="btn large solid gray menubutton">FEBRERO</a></p>
-                        <p><a id="MARZO" class="btn large solid gray menubutton">MARZO</a></p>            
-                    </div>
-                </div>
-                <div class="col-1-4 padding">
-                    <div class="border rounded">
-                        <h1 class="center">Q2</h1>
-                        <p><a id="ABRIL" class="btn large solid gray menubutton">ABRIL</a></p>
-                        <p><a id="MAYO" class="btn large solid gray menubutton">MAYO</a></p>
-                        <p><a id="JUNIO" class="btn large solid gray menubutton">JUNIO</a></p>            
-                    </div>
-                </div>
-                <div class="col-1-4 padding">
-                    <div class="border rounded">
-                        <h1 class="center">Q3</h1>
-                        <p><a id="JULIO" class="btn large solid gray menubutton">JULIO</a></p>
-                        <p><a id="AGOSTO" class="btn large solid gray menubutton">AGOSTO</a></p>
-                        <p><a id="SEPTIEMBRE" class="btn large solid gray menubutton">SEPTIEMBRE</a></p>            
-                    </div>
-                </div>
-                <div class="col-1-4 padding">
-                    <div class="border rounded">
-                        <h1 class="center">Q4</h1>
-                        <p><a id="OCTUBRE" class="btn large solid gray menubutton">OCTUBRE</a></p>
-                        <p><a id="NOVIEMBRE" class="btn large solid gray menubutton">NOVIEMBRE</a></p>
-                        <p><a id="DICIEMBRE" class="btn large solid gray menubutton">DICIEMBRE</a></p>            
-                    </div>
-                </div>
-            </div>            
-        </div>
-        <div class="row footer bg-transparent">
-            <div class="circleBase type1"></div>
-        </div>
-    </body>
-</html>
+                            <form th:action="@{/logout}" method="post">
+                                <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
+                            </form>            
+                        </div>   
+                        <div class="text-center">
+                            <h1>INFORME DE ACTIVIDADES</h1>
+                        </div> 
+                        <div class="row text-center">
+                            <div class="offset-sm-2 col-sm-8 offset-md-5 col-md-2 Padding-top-botton">
+                                <select id="year" style="width: 100%">
+                                    <option th:each="valor : ${lista}" th:value="${valor.descripcion}" th:text="${valor.descripcion}">
+                                    </option>
+                                </select>                    
+                            </div>   
+                        </div> 
+                        <div class="container">
+                            <div class="card-deck mb-3 text-center">
+                                <div class="card mb-4 shadow-sm bg-transparent" style="border-color: white">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">Q1</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><a id="Enero" class="btn btn-lg btn-block btn-light menubutton">ENERO</a></p>
+                                        <p><a id="Febrero" class="btn btn-lg btn-block btn-light menubutton">FEBRERO</a></p>
+                                        <p><a id="Marzo" class="btn btn-lg btn-block btn-light menubutton">MARZO</a></p>  
+                                    </div>
+                                </div>
+                                <div class="card mb-4 shadow-sm bg-transparent" style="border-color: white">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">Q2</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><a id="Abril" class="btn btn-lg btn-block btn-light menubutton">ABRIL</a></p>
+                                        <p><a id="Mayo" class="btn btn-lg btn-block btn-light menubutton">MAYO</a></p>
+                                        <p><a id="Junio" class="btn btn-lg btn-block btn-light menubutton">JUNIO</a></p>  
+                                    </div>
+                                </div>
+                                <div class="card mb-4 shadow-sm bg-transparent" style="border-color: white">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">Q3</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><a id="Julio" class="btn btn-lg btn-block btn-light menubutton">JULIO</a></p>
+                                        <p><a id="Agosto" class="btn btn-lg btn-block btn-light menubutton">AGOSTO</a></p>
+                                        <p><a id="Septiembre" class="btn btn-lg btn-block btn-light menubutton">SEPTIEMBRE</a></p> 
+                                    </div>
+                                </div>
+                                <div class="card mb-4 shadow-sm bg-transparent" style="border-color: white">
+                                    <div class="card-header">
+                                        <h4 class="my-0 font-weight-normal">Q4</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><a id="Octubre" class="btn btn-lg btn-block btn-light menubutton">OCTUBRE</a></p>
+                                        <p><a id="Noviembre" class="btn btn-lg btn-block btn-light menubutton">NOVIEMBRE</a></p>
+                                        <p><a id="Diciembre" class="btn btn-lg btn-block btn-light menubutton">DICIEMBRE</a></p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                                
+                    </body>
+                    </html>

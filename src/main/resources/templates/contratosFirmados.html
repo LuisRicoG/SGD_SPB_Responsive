@@ -4,55 +4,46 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>SGD-CONTRATOS FIRMADOS</title>
-        
-        <link rel="stylesheet" type="text/css" href="static/css/style.css"/> 
-        <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
-        <script th:src="@{static/js/view/descargageneral.js}"></script>        
-        <script th:src="@{static/js/view/contratosfirmados.js}"></script>
-         <link rel="shortcut icon" type="images/x-icon" href="images/favicon.ico">
-    </head>
-    <body>
-        <div class="row header bg-transparent">
-            <div class="row header bg-transparent">
-                <div>
-                    <div class="col-1-2 padding align-left">
-                        <p>
-                            <h2> Bienvenido,<span th:text="${#authentication.getPrincipal().getUsername()}"></span> </h2>
-                        </p> 
-                    </div>
-                    <div class="col-1-8 padding align-right header-txt"></div>
-                    <div class="col-1-4 padding align-right header-txt">
-                        <p><a href="/SGD/menu" class="ui-buttonhome ui-botton-menu"></a>
-                        </p>
-                    </div>    
-                    <div class="col-1-8 padding align-right">
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <title>Contratos Firmados</title>
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css"/>        
+                <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+                <link rel="shortcut icon" type="image/x-icon" href="static/images/icovaca.ico"  />
+                <script th:src="@{static/jquery/jquery-3.4.1.min.js}"></script>
+                <script th:src="@{static/js/view/descargageneral.js}"></script>
+                <script th:src="@{static/js/view/contratosfirmados.js}"></script>
+                </head>
+                <body>
+                    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
+                        <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
+                        <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
                         <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión" class="header-btn bg-transparent "/>
-                        </form>
+                            <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
+                        </form>            
                     </div>
-                </div>
-            </div>
-        </div>
-               <div class="row header center bg-transparent">
-            <h1>CONTRATOS FIRMADOS</h1>
-        </div>
-        <div class="contents bg-transparent padding">
-            <form method="POST" th:object="${vinculo}">
-                <table style="width:100%; border: none">
-                    <tr style="border: none">
-                        <td style="border: none" class="center"><p><a id="Financieros" class="ui-button-contratos">Financieros</a></p></td>
-                        <td style="border: none" class="center"><p><a id="Provedores" class="ui-button-contratos">Provedores</a></p></td>
-                    </tr>         
-                    <tr style="border: none">
-                        <td style="border: none" class="center"><p><a id="Clientes" class="ui-button-contratos">Clientes</a></p></td>
-                        <td style="border: none" class="center"><p><a id="Personal" class="ui-button-contratos">Personal</a></p></td> 
-                    </tr>   
-                </table>    
-            </form>
-        </div>
-    </body>
-</html>
+                    <div class="text-center">                        
+                        <h1>CONTRATOS FIRMADOS</h1>                        
+                    </div>
+                    <div class="row text-center">
+                        <div class="offset-xs-1 offset-md-1 col-xs-10  col-md-5 Padding-top-botton">
+                            <p><a id="Financieros" class="ui-button-contratos">Financieros</a></p>
+                        </div>
+                        <div class=" offset-xs-1 col-xs-10 col-md-5 Padding-top-botton"> 
+                            <p><a id="Provedores" class="ui-button-contratos">Provedores</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset-xs-1 offset-md-1 col-xs-10  col-md-5 Padding-top-botton">
+                            <p><a id="Clientes" class="ui-button-contratos">Clientes</a>
+                        </div>
+                        <div class="offset-xs-1 col-xs-10 col-md-5 Padding-top-botton">
+                            <p><a id="Personal" class="ui-button-contratos">Personal</a>
+                        </div>
+                    </div>   
+                </body>
+                </html>
