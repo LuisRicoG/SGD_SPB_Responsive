@@ -10,10 +10,10 @@
     </parent>
     <groupId>com.company</groupId>
     <artifactId>sgd</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
     <name>sgd</name>
-    <description>Responsivo SGD</description>
+    <description>SGD</description>
 
     <properties>
         <java.version>1.8</java.version>
