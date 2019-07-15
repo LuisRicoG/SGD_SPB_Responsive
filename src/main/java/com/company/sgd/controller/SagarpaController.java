@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -41,6 +42,7 @@ public class SagarpaController {
     }
 
     @PostMapping("/getdocumentoSagarpa")
+        @ResponseBody
     public void getDocumentoSagarpa(@RequestParam("year") String year, @RequestParam("documento") String documento) throws IOException {
         service.getDocumentosAnio(documento, year);
     }

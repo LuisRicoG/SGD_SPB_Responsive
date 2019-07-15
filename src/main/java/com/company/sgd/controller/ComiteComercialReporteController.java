@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -39,6 +40,7 @@ public class ComiteComercialReporteController {
     HttpServletResponse response;
 
     @PostMapping("/getdocumentocomitecomercialreglas")
+        @ResponseBody
     public void getDocumentoConsejoAdm(@RequestParam("year") String year, @RequestParam("documento") String documento) throws IOException {
         service.getDocumentosAnio(documento, year);
     }

@@ -19,16 +19,10 @@ and open the template in the editor.
                 <script th:src="@{static/js/view/sagarpa.js}"></script>
                 </head>
                 <body>
-                    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm bg-transparent">
-                        <h5 class="my-0 mr-md-auto font-weight-normal whiteLetter">Bienvenido, <span th:text="${#authentication.getPrincipal().getUsername()}"></span></h5>
-                        <a class="ui-buttonhome ui-botton-menu" href="/SGD/menu"></a>
-                        <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión" class="btn btn-outline-primary"/>
-                        </form>            
-                    </div>
-                    <div class="text-center">
-                        <h1>SAGARPA</h1>
-                    </div>
+                    <div th:replace="encabezado :: div">...</div>
+                    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                        <h1 class="display-4">SAGARPA</h1>
+                    </div> 
                     <div class="row text-center">
                         <div class="offset-sm-2 col-sm-8 offset-md-5 col-md-2 Padding-top-botton">
                             <select id="year" style="width: 100%">
@@ -41,37 +35,37 @@ and open the template in the editor.
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/docsolicitud.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="DocumentoSolicitud" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Documento Solicitud</a>
+                                <a id="DocumentoSolicitud" class="btn btn-lg btn-block ui-buttonenlacessagarpa">DOCUMENTOS SOLICITUD</a>
                             </div>               
                         </div>
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/deposito.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="Deposito" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Deposito</a>
+                                <a id="Deposito" class="btn btn-lg btn-block ui-buttonenlacessagarpa">DEPOSITO</a>
                             </div>               
                         </div>  
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/deposito.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="ComprobatePagos" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Comprobante Pagos</a>
+                                <a id="ComprobatePagos" class="btn btn-lg btn-block ui-buttonenlacessagarpa">COMPROBANTE PAGOS</a>
                             </div>               
                         </div>  
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/reporteventas.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="MensualesSagarpa" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Reportes Mensuales</a>
+                                <a id="MensualesSagarpa" class="btn btn-lg btn-block ui-buttonenlacessagarpa">REPORTES MENSUALES</a>
                             </div>               
                         </div>  
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/escritos.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="EscritosEnviados" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Escritos Enviados</a>
+                                <a id="EscritosEnviados" class="btn btn-lg btn-block ui-buttonenlacessagarpa">ESCRITOS ENVIADOS</a>
                             </div>               
                         </div>  
                         <div class="col-md-2 Padding-sagarpa">
                             <div class="btn-group-vertical">                            	
                                 <img src="static/images/escritos.png" class="img-thumbnail" width="100%" height="auto"/>
-                                <a id="RespuestasSagarpa" class="btn btn-lg btn-block ui-buttonenlacessagarpa">Respuestas Sagarpa</a>
+                                <a id="RespuestasSagarpa" class="btn btn-lg btn-block ui-buttonenlacessagarpa">RESPUESTAS SAGARPA</a>
                             </div>               
                         </div>  
 
