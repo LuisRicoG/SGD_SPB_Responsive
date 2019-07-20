@@ -89,15 +89,17 @@ public class AvaluoActivosServiceImpl implements AvaluoActivosService {
         try {
             String path = File.separator + dirPrincipal + File.separator + docunicos + File.separator + avaluosactivos + File.separator + x + File.separator;
             String fileName = prefijo + x + ".zip";
-            fileManager.zipFile(HOME + path, fileName);
+            boolean emptyzip=fileManager.zipFile(HOME + path, fileName);
             DocumentosActivosEntity entity = new DocumentosActivosEntity();
             entity.setRuta(path);
             entity.setNombre(fileName);
-            fileManager.downloadFile(entity, false);
-            
+            if (emptyzip)
+                fileManager.downloadFile(entity, false);
+            else
+                throw new AJAXException("Archivo zip vacio");            
         } catch (IOException | FileNotFoundException ex) {
             Logger.getLogger(AvaluoActivosServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-            throw new RedirectException(ex.getMessage());
+            throw new AJAXException(ex.getMessage());
         }
     }
 

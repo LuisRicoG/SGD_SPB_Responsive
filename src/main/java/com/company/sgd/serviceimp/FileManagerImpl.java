@@ -97,36 +97,41 @@ public class FileManagerImpl implements FileManager {
     }
 
     @Override
-    public void zipFile(String ruta, String nombre) throws IOException {
+    public boolean zipFile(String ruta, String nombre) throws IOException {
         filesListInDir.clear();
         File dir = new File(ruta);
         populateFilesList(dir, nombre);
-        //now zip files one by one
-        //create ZipOutputStream to write to the zip file
-        FileOutputStream fos = new FileOutputStream(ruta + File.separator + nombre);
-        ZipOutputStream zos = new ZipOutputStream(fos);
-        for (String filePath : filesListInDir) {
-            System.out.println("Zipping " + filePath);
-            //decrypt before zipping
-            File file = new File(filePath);
-            file = cryptoFiles.processFileEncrypt(file, true);
-            //for ZipEntry we need to keep only relative file path, so we used substring on absolute path
-            ZipEntry ze = new ZipEntry(filePath.substring(dir.getAbsolutePath().length() + 1, filePath.length()));
-            zos.putNextEntry(ze);
-            //read the file and write to ZipOutputStream
-            FileInputStream fis = new FileInputStream(filePath);
-            byte[] buffer = new byte[1024];
-            int len;
-            while ((len = fis.read(buffer)) > 0) {
-                zos.write(buffer, 0, len);
+        if (filesListInDir.isEmpty()){
+            return false;
+        }else{
+            //now zip files one by one
+            //create ZipOutputStream to write to the zip file
+            FileOutputStream fos = new FileOutputStream(ruta + File.separator + nombre);
+            ZipOutputStream zos = new ZipOutputStream(fos);
+            for (String filePath : filesListInDir) {
+                System.out.println("Zipping " + filePath);
+                //decrypt before zipping
+                File file = new File(filePath);
+                file = cryptoFiles.processFileEncrypt(file, true);
+                //for ZipEntry we need to keep only relative file path, so we used substring on absolute path
+                ZipEntry ze = new ZipEntry(filePath.substring(dir.getAbsolutePath().length() + 1, filePath.length()));
+                zos.putNextEntry(ze);
+                //read the file and write to ZipOutputStream
+                FileInputStream fis = new FileInputStream(filePath);
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = fis.read(buffer)) > 0) {
+                    zos.write(buffer, 0, len);
+                }
+                zos.closeEntry();
+                fis.close();
+                //encrypt after zipping
+                cryptoFiles.processFileEncrypt(file, false);
             }
-            zos.closeEntry();
-            fis.close();
-            //encrypt after zipping
-            cryptoFiles.processFileEncrypt(file, false);
+            zos.close();
+            fos.close();
+            return true;
         }
-        zos.close();
-        fos.close();
     }
 
     private void populateFilesList(File dir, String nombre) throws IOException {

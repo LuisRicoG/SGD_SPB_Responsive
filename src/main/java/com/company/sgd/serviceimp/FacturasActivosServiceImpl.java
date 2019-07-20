@@ -81,13 +81,17 @@ public class FacturasActivosServiceImpl implements FacturasActivosService {
         try {
             String path = File.separator + dirPrincipal + File.separator + docunicos + File.separator + facturasactivos + File.separator + x + File.separator;            
             String fileName = prefijo + x + ".zip";
-            fileManager.zipFile(HOME + path, fileName);
+            boolean emptyzip=fileManager.zipFile(HOME + path, fileName);
             DocumentosActivosEntity entity = new DocumentosActivosEntity();
             entity.setRuta(path);
             entity.setNombre(fileName);
-            fileManager.downloadFile(entity, false);            
-        } catch (IOException ex) {
+            if (emptyzip)
+                fileManager.downloadFile(entity, false);
+            else
+                throw new AJAXException("Archivo zip vacio");
+        }catch(IOException | FileNotFoundException ex) {
             Logger.getLogger(FacturasActivosServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            throw new AJAXException(ex.getMessage());
         }
     }    
 }

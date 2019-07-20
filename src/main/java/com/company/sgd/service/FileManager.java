@@ -16,5 +16,5 @@ import java.io.IOException;
 public interface FileManager {
 public void downloadFile(DocumentosActivosEntity entidad, Boolean isEncripted) throws IOException, FileNotFoundException;
 public void downloadFile(DocumentosAcumuladosEntity entidad, Boolean isEncripted) throws IOException, FileNotFoundException;
-public void zipFile(String ruta, String nombre) throws IOException;
+public boolean zipFile(String ruta, String nombre) throws IOException;
 }
