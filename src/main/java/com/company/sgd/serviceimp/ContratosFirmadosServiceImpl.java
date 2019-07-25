@@ -517,6 +517,12 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
     private String filerespuestassagarpa;
     @Value("${filenuestrogobierno}")
     private String filenuestrogobierno;
+    @Value("${layoutfile}")
+    private String layoutfile;
+    @Value("${dircensoganadero}")
+    private String dircensoganadero;
+    @Value("${censoganaderofile}")
+    private String censoganaderofile;
     
     
     
@@ -568,6 +574,11 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
                 dir += dirInformacionIndustria + File.separator + dirPrecioAlimento + File.separator;
                 downloadDoc = filePrecioAlimento;
                 break;
+             case "censoganadero":
+                dir += dirInformacionIndustria + File.separator + dircensoganadero + File.separator;
+                downloadDoc = censoganaderofile;
+                break;    
+                
             case "AsambleaAccionistas":
                 dir += dirGobiernoCorporativo + File.separator + dirAsambleaAccionistas + File.separator;
                 downloadDoc = fileAsambleaAccionistas;
@@ -746,6 +757,11 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
                   case "planosinfraestructura":
                 dir += proyectoejecutivofolder + File.separator + planosfolder + File.separator;
                 downloadDoc = planosinfraestructurafile;
+                break;
+                
+                case "layout":
+                dir += proyectoejecutivofolder + File.separator + planosfolder + File.separator;
+                downloadDoc = layoutfile;
                 break;
                 
                    case "tarjetaejecutiva":
