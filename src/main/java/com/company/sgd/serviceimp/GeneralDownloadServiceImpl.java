@@ -46,6 +46,15 @@ public class GeneralDownloadServiceImpl implements GeneralDownloadService {
     private String comiteengordadocumentos;
     @Value("${documentoscomiteinversion}")
     private String comiteinversionesdocumentos;
+    @Value("${sagarpacomprobantepagos}")
+    private String sagarpacomprobantepagos;
+    @Value("${sagarpareportesmensuales}")
+    private String sagarpareportesmensuales;
+    @Value("${sagarpaescritosenviados}")
+    private String sagarpaescritosenviados;
+    @Value("${sagarparespuestas}")
+    private String sagarparespuestas;
+    
     
 
     @Override
@@ -102,6 +111,18 @@ public class GeneralDownloadServiceImpl implements GeneralDownloadService {
                 break;
             case 9:
                 strReturn = comiteinversionesdocumentos;
+                break;
+            case 10:
+                strReturn = sagarpacomprobantepagos;
+                break;
+            case 11:
+                strReturn = sagarpareportesmensuales;
+                break;
+            case 12:
+                strReturn = sagarpaescritosenviados;
+                break;
+            case 13:
+                strReturn = sagarparespuestas;
                 break;
         }
         return strReturn;

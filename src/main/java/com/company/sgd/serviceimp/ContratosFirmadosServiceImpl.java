@@ -524,9 +524,25 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
     @Value("${censoganaderofile}")
     private String censoganaderofile;
     
+    @Value("${sagarpacomprobantepagosfolder}")
+    private String dirsagarpacomprobantepagos;
+    @Value("${sagarpacomprobantepagosfile}")
+    private String filesagarpacomprobantepagos;
     
+    @Value("${sagarpareportesmensualesfolder}")
+    private String dirsagarpareportesmensuales;
+    @Value("${sagarpareportesmensualesfile}")
+    private String filesagarpareportesmensuales;
     
+    @Value("${sagarpaescritosenviadosfolder}")
+    private String dirsagarpaescritosenviados;
+    @Value("${sagarpaescritosenviadosfile}")
+    private String filesagarpaescritosenviados;
     
+    @Value("${sagarparespuestasfolder}")
+    private String dirsagarparespuestas;
+    @Value("${sagarparespuestasfile}")
+    private String filesagarparespuestas;
     
 
     @Autowired
@@ -779,6 +795,25 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
                 downloadDoc = justificacioninglesfile;
                 break;
                 
+            case "sagarpacomprobantepagos":
+                dir += dirDocLegal + File.separator + dirsagarpacomprobantepagos + File.separator;
+                downloadDoc = filesagarpacomprobantepagos;
+                break;
+                
+            case "sagarpareportesmensuales":
+                dir += dirDocLegal + File.separator + dirsagarpareportesmensuales + File.separator;
+                downloadDoc = filesagarpareportesmensuales;
+                break;
+                
+            case "sagarpaescritosenviados":
+                dir += dirDocLegal + File.separator + dirsagarpaescritosenviados + File.separator;
+                downloadDoc = filesagarpaescritosenviados;
+                break;
+                
+            case "sagarparespuestas":
+                dir += dirDocLegal + File.separator + dirsagarparespuestas + File.separator;
+                downloadDoc = filesagarparespuestas;
+                break;
                 
         }
         String path = HOME + File.separator + dirPrincipal + File.separator + documentosunicos + File.separator + dir + File.separator;
