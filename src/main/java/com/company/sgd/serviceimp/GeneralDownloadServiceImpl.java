@@ -112,16 +112,16 @@ public class GeneralDownloadServiceImpl implements GeneralDownloadService {
             case 9:
                 strReturn = comiteinversionesdocumentos;
                 break;
-            case 10:
+            case 13:
                 strReturn = sagarpacomprobantepagos;
                 break;
-            case 11:
+            case 14:
                 strReturn = sagarpareportesmensuales;
                 break;
-            case 12:
+            case 15:
                 strReturn = sagarpaescritosenviados;
                 break;
-            case 13:
+            case 16:
                 strReturn = sagarparespuestas;
                 break;
         }
