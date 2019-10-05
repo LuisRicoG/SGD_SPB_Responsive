@@ -525,7 +525,18 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
     private String censoganaderofile;
     
     
-    
+       @Value("${actarpt}")
+    private String actarpt;
+    @Value("${actarptfile}")
+    private String actarptfile;
+    @Value("${poderesrpt}")
+    private String poderesrpt;
+    @Value("${poderesrptfile}")
+    private String poderesrptfile;
+    @Value("${asamblearpt}")
+    private String asamblearpt;
+    @Value("${asamblearptfile}")
+    private String asamblearptfile;
     
     
 
@@ -640,10 +651,22 @@ public class ContratosFirmadosServiceImpl implements ContratosFirmadosService {
                 dir += dirDocLegal + File.separator + dirEscrituras + File.separator + dirActaConstitutiva + File.separator;
                 downloadDoc = fileActaConstitutiva;
                 break;
+             case "ActaInscrRFC":
+                dir += dirDocLegal + File.separator + dirEscrituras + File.separator + actarpt + File.separator;
+                downloadDoc = actarptfile;
+                break;    
             case "Poderes":
                 dir += dirDocLegal + File.separator + dirEscrituras + File.separator + dirPoderes + File.separator;
                 downloadDoc = filePoderes;
                 break;
+            case "PoderesInscrRFC":
+                dir += dirDocLegal + File.separator + dirEscrituras + File.separator + poderesrpt + File.separator;
+                downloadDoc = poderesrptfile;
+                break;                 
+            case "ReformaInscrRFC":
+                dir += dirDocLegal + File.separator + dirEscrituras + File.separator + asamblearpt + File.separator;
+                downloadDoc = asamblearptfile;
+                break;    
             case "CodigoEtica":
                 dir += dirGobiernoCorporativo + File.separator + dirCodigoEtica + File.separator;
                 downloadDoc = fileCodigoEtica;
